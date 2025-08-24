@@ -3,21 +3,23 @@
 describe('Atualizar status do animal', () => {
 
   beforeEach(() => {
-    // Faz login via API e salva o token no localStorage
-    cy.request('POST', 'http://localhost:8080/login', {
-      email: 'usuario_valido@example.com', // substitua por um usuário existente
-      senha: 'senha_valida'
-    }).then((resp) => {
-      // Supondo que a API devolva um token JWT
-      window.localStorage.setItem('token', resp.body.token);
-    });
-
-    // Visita a página de animais já logado
-    cy.visit('http://localhost:3000/meus-animais');
+    // Executa antes de cada teste: visita a página de login
+    cy.visit('http://localhost:3000/login');
   });
 
-  it('Deve atualizar o status do primeiro animal', () => {
-    // Espera o primeiro card aparecer
+  it('Deve logar e atualizar o status do primeiro animal', () => {
+    // Preenche o email e senha
+    cy.get('input[name="email"]').type('teste@example.com');
+    cy.get('input[name="password"]').type('12345678');
+
+    // Clica no botão de login
+    cy.get('button[type="submit"]').click();
+
+   // Verifica que a página mudou para a área dos animais
+    cy.url({ timeout: 10000 }).should('include', '/area_logada/animais_disponiveis');
+
+    
+    // Seleciona o primeiro card de animal
     cy.get('.animal-card', { timeout: 10000 }).first().as('primeiroAnimal');
 
     // Clica no botão "Atualizar status" dentro do card
