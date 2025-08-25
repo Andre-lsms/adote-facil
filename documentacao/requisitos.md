@@ -54,7 +54,7 @@ Como um **usuário logado**, eu quero **editar meus dados pessoais** para manter
 
 ---
 
-### **Cenários para HU-02: Publicação de Animal para Adoção**
+### **Cenários para HU-03 Publicação de Animal para Adoção**
 
 #### Cenário Principal
 **Dado que** estou logado,
@@ -74,7 +74,23 @@ Como um **usuário logado**, eu quero **editar meus dados pessoais** para manter
 
 ---
 
-### **Cenários para HU-03: Visualização de Animais Disponíveis**
+### **Cenários para HU-04: Atualizar Status do Animal**
+
+#### Cenário Principal
+**Dado que** eu sou o dono de uma publicação de animal,
+**Quando** acesso a minha publicação e clico no botão para marcar como "Adotado",
+**Então** o status do animal deve ser atualizado e a publicação deve ser removida da lista de animais disponíveis para outros usuários.
+
+---
+
+### **Cenários para HU-05: Excluir Publicação**
+
+#### Cenário Principal
+**Dado que** eu sou o dono de uma publicação de animal,
+**Quando** acesso a minha publicação e clico no botão "Excluir",
+**Então** a publicação deve ser removida permanentemente da lista de animais disponíveis para todos os usuários.
+
+### **Cenários para HU-06: Visualização de Animais Disponíveis**
 
 #### Cenário Principal
 **Dado que** estou na página principal do aplicativo,
@@ -89,7 +105,7 @@ Como um **usuário logado**, eu quero **editar meus dados pessoais** para manter
 
 ---
 
-### **Cenários para HU-04: Início de Conversa (Chat)**
+### **Cenários para HU-07: Início de Conversa (Chat)**
 
 #### Cenário Principal
 **Dado que** estou visualizando a publicação de um animal,
@@ -103,17 +119,7 @@ Como um **usuário logado**, eu quero **editar meus dados pessoais** para manter
     * **Então** o sistema deve enviar a mensagem mesmo assim.
 
 ---
-
-### **Cenários para HU-05: Sair da Conta**
-
-#### Cenário Principal
-**Dado que** estou logado e na minha conta,
-**Quando** clico no botão "Sair",
-**Então** minha sessão deve ser encerrada e eu devo ser redirecionado para a página de login.
-
----
-
-### **Cenários para HU-06: Alterar Dados Pessoais**
+### **Cenários para HU-08: Alterar Dados Pessoais**
 
 #### Cenário Principal
 **Dado que** estou logado,
@@ -129,18 +135,3 @@ Como um **usuário logado**, eu quero **editar meus dados pessoais** para manter
 
 ---
 
-### **Cenários para HU-07: Atualizar Status do Animal**
-
-#### Cenário Principal
-**Dado que** eu sou o dono de uma publicação de animal,
-**Quando** acesso a minha publicação e clico no botão para marcar como "Adotado",
-**Então** o status do animal deve ser atualizado e a publicação deve ser removida da lista de animais disponíveis para outros usuários.
-
----
-
-### **Cenários para HU-08: Excluir Publicação**
-
-#### Cenário Principal
-**Dado que** eu sou o dono de uma publicação de animal,
-**Quando** acesso a minha publicação e clico no botão "Excluir",
-**Então** a publicação deve ser removida permanentemente da lista de animais disponíveis para todos os usuários.
